@@ -1,0 +1,144 @@
+/* Product Page Styles */
+.product-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #764ba2;
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.product-image-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-info-section h1 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.product-info-section > p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  margin-bottom: 2rem;
+}
+
+.wishlist-button {
+  padding: 12px 24px;
+  background-color: #e8f5e9;
+  color: #27ae60;
+  border: 2px solid #27ae60;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wishlist-button:hover:not(:disabled) {
+  background-color: #27ae60;
+  color: white;
+}
+
+.wishlist-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.wishlist-button.wishlisted {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.price-comparison {
+  margin-top: 2rem;
+}
+
+.price-comparison h2 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table thead {
+  background-color: #f5f5f5;
+}
+
+.price-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.price-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-table .price {
+  font-weight: bold;
+  color: #27ae60;
+  font-size: 18px;
+}
+
+.buy-button {
+  background-color: #667eea;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #764ba2;
+}
+
+@media (max-width: 768px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .product-info-section h1 {
+    font-size: 24px;
+  }
+}

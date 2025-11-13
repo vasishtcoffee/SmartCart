@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "description": "High-quality Bluetooth headphones with noise cancellation and 30-hour battery life.",
+    "image": "https://via.placeholder.com/300?text=Wireless+Headphones",
+    "storePrices": [
+      { "store": "Amazon", "price": 79.99, "link": "https://amazon.com" },
+      { "store": "Best Buy", "price": 89.99, "link": "https://bestbuy.com" },
+      { "store": "Walmart", "price": 74.99, "link": "https://walmart.com" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "USB-C Charging Cable",
+    "description": "Durable USB-C cable with fast charging support up to 100W.",
+    "image": "https://via.placeholder.com/300?text=USB-C+Cable",
+    "storePrices": [
+      { "store": "Amazon", "price": 12.99, "link": "https://amazon.com" },
+      { "store": "Best Buy", "price": 14.99, "link": "https://bestbuy.com" },
+      { "store": "Target", "price": 11.99, "link": "https://target.com" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Portable SSD 1TB",
+    "description": "Ultra-fast external SSD with 1TB storage and USB 3.1 interface.",
+    "image": "https://via.placeholder.com/300?text=Portable+SSD",
+    "storePrices": [
+      { "store": "Amazon", "price": 99.99, "link": "https://amazon.com" },
+      { "store": "Newegg", "price": 94.99, "link": "https://newegg.com" },
+      { "store": "Best Buy", "price": 109.99, "link": "https://bestbuy.com" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical gaming keyboard with customizable switches and macro support.",
+    "image": "https://via.placeholder.com/300?text=Mechanical+Keyboard",
+    "storePrices": [
+      { "store": "Amazon", "price": 129.99, "link": "https://amazon.com" },
+      { "store": "Newegg", "price": 124.99, "link": "https://newegg.com" },
+      { "store": "Best Buy", "price": 139.99, "link": "https://bestbuy.com" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "4K Webcam",
+    "description": "Professional 4K webcam with auto-focus and built-in microphone for streaming.",
+    "image": "https://via.placeholder.com/300?text=4K+Webcam",
+    "storePrices": [
+      { "store": "Amazon", "price": 149.99, "link": "https://amazon.com" },
+      { "store": "Best Buy", "price": 159.99, "link": "https://bestbuy.com" },
+      { "store": "B&H Photo", "price": 144.99, "link": "https://bhphotovideo.com" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Laptop Stand",
+    "description": "Adjustable aluminum laptop stand for improved ergonomics and cooling.",
+    "image": "https://via.placeholder.com/300?text=Laptop+Stand",
+    "storePrices": [
+      { "store": "Amazon", "price": 34.99, "link": "https://amazon.com" },
+      { "store": "IKEA", "price": 39.99, "link": "https://ikea.com" },
+      { "store": "Walmart", "price": 29.99, "link": "https://walmart.com" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Mouse Pad XL",
+    "description": "Large gaming mouse pad with non-slip rubber base and water-resistant surface.",
+    "image": "https://via.placeholder.com/300?text=Mouse+Pad",
+    "storePrices": [
+      { "store": "Amazon", "price": 24.99, "link": "https://amazon.com" },
+      { "store": "Best Buy", "price": 27.99, "link": "https://bestbuy.com" },
+      { "store": "Newegg", "price": 22.99, "link": "https://newegg.com" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "USB Hub 7-Port",
+    "description": "7-port USB 3.0 hub with individual power switches and charging support.",
+    "image": "https://via.placeholder.com/300?text=USB+Hub",
+    "storePrices": [
+      { "store": "Amazon", "price": 44.99, "link": "https://amazon.com" },
+      { "store": "Best Buy", "price": 49.99, "link": "https://bestbuy.com" },
+      { "store": "Walmart", "price": 39.99, "link": "https://walmart.com" }
+    ]
+  }
+]
