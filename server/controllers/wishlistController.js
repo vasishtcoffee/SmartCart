@@ -1,4 +1,4 @@
-import Wishlist from '../models/Wishlist.js';
+import { addToWishlist, getWishlist, removeFromWishlist } from '../models/Wishlist.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -7,16 +7,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const productsPath = path.join(__dirname, '../data/mockProducts.json');
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf8'));
 
-export const getWishlist = async (req, res) => {
+export const getWishlist_controller = async (req, res) => {
   try {
-    const wishlist = await Wishlist.find().sort({ addedAt: -1 });
+    const wishlist = await getWishlist();
     res.json(wishlist);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching wishlist', error });
   }
 };
 
-export const addToWishlist = async (req, res) => {
+export const addToWishlist_controller = async (req, res) => {
   try {
     const { productId } = req.body;
     const product = products.find(p => p.id === productId);
@@ -26,30 +26,35 @@ export const addToWishlist = async (req, res) => {
     }
 
     // Check if already in wishlist
-    const exists = await Wishlist.findOne({ productId });
+    const wishlistItems = await getWishlist();
+    const exists = wishlistItems.find(w => w.productId === productId);
     if (exists) {
       return res.status(400).json({ message: 'Product already in wishlist' });
     }
 
-    const wishlistItem = new Wishlist({
+    const insertedId = await addToWishlist({
       productId,
       productName: product.name,
       price: Math.min(...product.storePrices.map(sp => sp.price))
     });
 
-    await wishlistItem.save();
-    res.status(201).json(wishlistItem);
+    res.status(201).json({
+      _id: insertedId,
+      productId,
+      productName: product.name,
+      price: Math.min(...product.storePrices.map(sp => sp.price))
+    });
   } catch (error) {
     res.status(500).json({ message: 'Error adding to wishlist', error });
   }
 };
 
-export const removeFromWishlist = async (req, res) => {
+export const removeFromWishlist_controller = async (req, res) => {
   try {
     const { productId } = req.params;
-    const result = await Wishlist.findOneAndDelete({ productId: parseInt(productId) });
+    const deletedCount = await removeFromWishlist(parseInt(productId));
 
-    if (!result) {
+    if (deletedCount === 0) {
       return res.status(404).json({ message: 'Wishlist item not found' });
     }
 
