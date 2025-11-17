@@ -1,26 +1,23 @@
-import Order from '../models/Order.js';
+import { insertOrder } from '../models/Order.js';
+import { MongoClient } from 'mongodb';
+
 
 export const createOrder = async (req, res) => {
   try {
     const { items, total } = req.body;
-
     if (!items || items.length === 0) {
       return res.status(400).json({ message: 'No items in order' });
     }
-
     const orderNumber = `ORD-${Date.now()}`;
-
-    const order = new Order({
+    const orderData = {
       items,
       total,
       orderNumber
-    });
-
-    await order.save();
-
+    };
+    const insertedId = await insertOrder(orderData);
     res.status(201).json({
       message: 'Order created successfully',
-      order,
+      order: { ...orderData, _id: insertedId },
       confirmation: {
         orderNumber,
         total,
@@ -34,10 +31,16 @@ export const createOrder = async (req, res) => {
 };
 
 export const getOrders = async (req, res) => {
+  const uri = 'mongodb://localhost:27017'; 
+  const client = new MongoClient(uri);
   try {
-    const orders = await Order.find().sort({ createdAt: -1 });
+    await client.connect();
+  const db = client.db('smartcart'); 
+    const orders = await db.collection('orders').find().sort({ createdAt: -1 }).toArray();
     res.json(orders);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching orders', error });
+  } finally {
+    await client.close();
   }
 };
